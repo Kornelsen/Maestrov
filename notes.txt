@@ -1,0 +1,39 @@
+g c c c d e e
+e d c d e c
+e e f g 
+g f e f g e
+c c d e
+e d c d e c
+g g c c c d e e
+e d c d e c
+c c c g a a g
+e e d d c
+g c c c g a a g
+e e d d c
+g g c c c
+g g c c c
+c c c g a a g
+e e d d c
+d d d e f#
+f# e f# g a
+d d d a a a f# f# f# d d d
+a g f# e d
+e e b b c# c# b
+a a g# g# f# f# e
+b b a a g# g# f#
+e e d d
+f e d c d c e d c
+b b a a g# g# f#
+e e b b c# c# b
+a a g# g# f# f# e
+a a b a d c#
+a a b a e d
+e e d d
+a a a f# d c# b
+g g f# d e d
+a a b a d c#
+a a b a e d
+e f f f e d c
+c c d e d c 
+a a a f# d c# b
+g g f# d e d

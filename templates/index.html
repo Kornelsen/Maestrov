@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Maestrov App</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+          
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header" style="margin:2em;">
+            <h3 class="text-muted">Maestrov App</h3>
+        </div>
+ 
+        <div class="jumbotron"> 
+
+            <div style="margin-bottom: 1em;">
+                <h1>Maestrov</h1>
+                <a class="btn btn-lg btn-success" id="generate" role="button">
+                    Generate Song <span class="glyphicon glyphicon-music" aria-hidden="true">
+                </a>
+            </div>
+
+            <div id='tune'>
+            </div>
+
+            <div class="description col-md">
+                <h3>Intelligent Song Creation</h3>
+                <p>Maestrov uses Markov chains to generate random songs. Probability of a note occuring in a sequence is calculated using a state table that pulls it's data from a compiled list of musical note sequences.</p>
+            </div>
+
+        </div>
+ 
+        <div class="row marketing" >
+        </div>
+ 
+        <footer class="footer">
+            <p>&copy; Maestrov 2017</p>
+        </footer>
+</body>
+
+<script>
+        $("#generate").click(function(e){
+            e.preventDefault();
+            $.ajax({
+                url: "/GenerateSong",
+                type: "get",
+                success: function(response) {
+                    $("#tune").html(response);
+                    $("#audio").html("<source src=\"{{ url_for('static', filename = 'tune.wav') }}\" type=\"audio/wav\"> Your browser does not support the audio element.")
+                },
+                error: function(xhr) {
+                    $("#tune").html("<p style='color:red;'>Error: " +xhr.status+"</p>")
+                } 
+            });
+        });
+    </script>  
+ 
+</html>
